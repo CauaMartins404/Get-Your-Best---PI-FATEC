@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro Academia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="csscadastro.css" />
+</head>
+<body><div class="logo-container">
+    <img src="imagens/icone.png" alt="Logo da Academia" class="logo" />
+  </div>
+  <div class="formulario-container">
+    <h1>Cadastro</h1>
+    <form action="cadastro.php" method="post">
+      <label for="nome">Nome de Usuario:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="celular">Celular:</label>
+      <input type="tel" id="celular" name="celular" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="senha">Senha:</label>
+      <div class="campo-senha">
+        <input type="password" id="senha" name="senha" required />
+        <button type="button" class="mostrar-senha" onclick="alternarSenha()">👁️</button>
+      </div>      
+
+      <label for="treinou">Já treinou no último ano?</label>
+      <select id="treinou" name="treinou" required>
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso" name="peso" required min="38" max="250" />
+
+      <label for="altura">Altura (cm):</label>
+      <input type="number" id="altura" name="altura" required min="100" max="230"/>
+
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade" required min="12" max="90" />
+
+      <label for="disponibilidade">Disponibilidade de treino:</label>
+      <select id="disponibilidade" name="disponibilidade" required>
+        <option value="">Selecione</option>
+        <option value="3x">3x por semana</option>
+        <option value="4x">4x por semana</option>
+        <option value="5x">5x por semana</option>
+      </select>
+
+      <label for="biotipo">Biotipo corporal:</label>
+      <select id="biotipo" name="biotipo" required>
+        <option value="">Selecione</option>
+        <option value="ectomorfo">Ectomorfo</option>
+        <option value="mesomorfo">Mesomorfo</option>
+        <option value="endomorfo">Endomorfo</option>
+      </select>
+
+      <label for="objetivo">Objetivo:</label>
+      <select id="objetivo" name="objetivo" required>
+        <option value="">Selecione</option>
+        <option value="perder_peso">Perder peso</option>
+        <option value="ganhar_musculo">Ganhar músculo</option>
+        <option value="ambos">Os dois</option>
+      </select>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+  <script>
+    function alternarSenha() {
+      const input = document.getElementById('senha');
+      const icone = document.querySelector('.mostrar-senha');
+  
+      if (input.type === 'password') {
+        input.type = 'text';
+        icone.textContent = '🙈';
+      } else {
+        input.type = 'password';
+        icone.textContent = '👁️';
+      }
+    }
+  </script>
+</body>
+</html>

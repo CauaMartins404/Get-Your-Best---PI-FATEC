@@ -1,0 +1,154 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F4F4F4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin-top: 80px;
+    user-select: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1A1A1A;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+.menu {
+    display: flex;
+}
+
+.menu a {
+    padding: 12px 20px;
+    color: #B0B0B0;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-left: 20px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.menu a.ativo {
+    background-color: #8f0000;
+    color: #fff;
+}
+
+.menu a:hover {
+    background-color: #D35D00;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+.grupos-musculares h1 {
+    font-size: 36px;
+    color: #FF6F00;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.particoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.particao {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.particao:hover {
+    background-color: #FFB74D;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #FF6F00;
+}
+
+.subgrupo {
+    display: none;
+    margin-top: 10px;
+}
+
+.exercicio {
+    font-size: 16px;
+    color: #ebebeb;
+    margin-top: 10px;
+    font-weight: 500;
+    padding: 10px 15px;
+    background-color: #e65346;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+}
+
+.exercicio:hover {
+    background-color: #FFB74D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: 28px;
+    color: #FF6F00;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.particao:active {
+    transform: translateY(2px);
+    background-color: #F57C00;
+    box-shadow: none;
+}

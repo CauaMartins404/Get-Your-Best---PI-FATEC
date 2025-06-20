@@ -1,0 +1,150 @@
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #242424;
+}
+
+.navbar {
+  position: absolute; 
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.logo img {
+  width: 70px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #8f0000);
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+
+.menu {
+  display: flex;
+  gap: 10px;
+}
+
+.menu a {
+  padding: 12px 16px;
+  color: #eee;
+  background-color: #2a2a2a;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu a.ativo {
+  background-color: #8f0000;
+}
+
+.menu a:hover {
+  background-color: #cc651c;
+  color: #fff;
+}
+
+
+.header {
+  background-image: linear-gradient(to right, #ff6b27 0%, #890505 100%);
+  color: #fff;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 36px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-top: 110px;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.sidebar-left,
+.sidebar-right {
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.blog-topic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #242424;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+.blog-topic img {
+  width: 40px;
+  height: 40px;
+}
+.blog-topic:hover {
+  background-color: #ffe5d2;
+  color: #8f0000;
+}
+
+.fitness-article {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.fitness-article h2 {
+  color: #8f0000;
+  margin-bottom: 20px;
+}
+.fitness-article h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.fitness-article p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.fitness-article blockquote {
+  border-left: 4px solid #8f0000;
+  padding-left: 15px;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.whatsapp-link {
+  display: inline-block;
+  margin-top: 20px;
+  background: #8f0000;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+.whatsapp-link:hover {
+  background: #cc651c;
+  transform: translateY(-2px);
+}
