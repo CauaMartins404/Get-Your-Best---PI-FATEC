@@ -1,3 +1,30 @@
+<?php
+// Inclua APENAS o que for necessário. Para buscar dados do blog, só precisa da conexão.
+require_once 'conexao.php'; // Inclui o novo arquivo e nos dá a variável $conn
+
+// Resto do seu código para exibir o blog...
+// O código abaixo é apenas um exemplo de como você usaria o $conn
+
+$dados_do_blog = [];
+try {
+    $sql = "SELECT titulo, conteudo, autor, data_publicacao FROM artigos ORDER BY data_publicacao DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    // Pega todos os resultados como um array associativo
+    $dados_do_blog = $result->fetch_all(MYSQLI_ASSOC);
+
+} catch (mysqli_sql_exception $e) {
+    error_log("Erro ao buscar artigos no blog: " . $e->getMessage());
+    echo "<p>Não foi possível carregar os artigos do blog. Tente novamente mais tarde.</p>";
+}
+
+// Feche a conexão e o statement quando terminar de usá-los
+$stmt->close();
+$conn->close();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,13 +43,13 @@
         <a href="index.php">Home</a>
         <a href="PagSobre.html">Sobre</a>
         <a href="PagExercicios.html">Exercícios</a>
-        <a href="PagBlog.html" class="ativo">Blog</a>
-  
+        <a href="PagBlog.php" class="ativo">Blog</a>
       </nav>
     </div>
-   
   </header>
+
   <h1 class="header">Blog - GYB</h1>
+
   <main class="blog-container">
     <aside class="sidebar-left">
       <a href="dieta.html" class="blog-topic">
@@ -37,17 +64,14 @@
         <img src="Imagens/receita.png" alt="Ícone de receitas"/>
         <span>Receitas Fit</span>
       </a>
-
       <a href="pre-treino.html" class="blog-topic">
         <img src="Imagens/pre-treino.png" alt="Ícone de pré-treino"/>
         <span>Pré-treino</span>
       </a>
-
       <a href="pos-treino.html" class="blog-topic">
         <img src="Imagens/pos-treino.png" alt="Ícone de pós-treino"/>
         <span>PÓS-treino</span>
       </a>
-      
     </aside>
 
     <section class="article">
@@ -69,13 +93,14 @@
         </p>
         <blockquote>“Corpo em movimento, mente em equilíbrio.”</blockquote>
         <p>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/yd4toRdauME?si=4aLIVDSXw_WuYxC6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/yd4toRdauME?si=4aLIVDSXw_WuYxC6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </p>
       </article>
     </section>
 
     <aside class="sidebar-right">
-      <p> </p>
-      <p> </p>
+      <p>Peso inicial: <?php echo htmlspecialchars($peso_inicial); ?></p>
+      <p>Peso atual: <input class="input"></p>
       <a href="https://www.whatsapp.com" target="_blank" class="whatsapp-link">Grupos no whatsapp</a>
     </aside>
   </main>

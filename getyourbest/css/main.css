@@ -1,0 +1,106 @@
+/* css/main.css - SEU ARQUIVO DE ESTILOS GLOBAIS */
+
+/* --- RESET BÁSICO E ESTILOS GERAIS DO BODY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5; /* Cor de fundo padrão */
+    color: #242424;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding-top: 90px; /* Espaço para a navbar fixa */
+}
+
+/* --- NAVBAR FIXA (para todas as páginas) --- */
+.navbar {
+    position: fixed; /* Fixa no topo da tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.logo a {
+    display: inline-block; /* Garante que a área de clique funcione */
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px #8f0000);
+    transition: transform 0.3s ease;
+    vertical-align: middle; /* Alinha a imagem corretamente */
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.menu {
+    display: flex;
+    gap: 10px;
+}
+
+.menu a {
+    padding: 12px 16px;
+    color: #eee;
+    background-color: #2a2a2a;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu a.ativo {
+    background-color: #8f0000;
+}
+
+.menu a:hover {
+    background-color: #cc651c;
+    color: #fff;
+}
+
+/* --- CABEÇALHO PADRÃO DE PÁGINA (ex: Blog, Receitas) --- */
+.page-header {
+    background-image: linear-gradient(to right, #ff6b27 0%, #890505 100%);
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 48px;
+    margin: 0;
+}
+
+/* --- CLASSES DE CONTAINER PARA CONTEÚDO --- */
+.container {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.main-content {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
